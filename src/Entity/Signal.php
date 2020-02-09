@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ORM\Table(name="`signal`")
  * @ORM\Entity(repositoryClass="App\Repository\SignalRepository")
  */
 class Signal
