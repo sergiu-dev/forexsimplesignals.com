@@ -1,0 +1,87 @@
+/* ** Header ** */
+header {
+  min-height: 400px;
+  background-image: linear-gradient(to bottom, transparent, #191927), url("../images/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 100px 0 50px;
+}
+
+.header-txt {
+  color: #fff;
+  animation: fadeIn 5s;
+}
+
+.header-txt h1 {
+  color: #01DB85;
+}
+
+.header-txt p {
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+/* ** Home Main section ** */
+/* Trades Widget */
+.tradingview-widget-container {
+  margin: 20px 0;
+}
+
+/* Trades */
+.trades-box {
+  background-color: #1F1F2F;
+  color: #fff;
+  border-radius: 20px;
+  flex-grow: 0;
+}
+
+.trades-box:hover {
+  box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.3);
+  transform: scale(1.01, 1.01);
+}
+
+.trades-box {
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.trades-img {
+  width: 50px;
+}
+
+.trades-actions {
+  background-color: #1D2245;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px 40px;
+}
+
+/* Insights */
+.insights {
+  background-color: #1F1F2F;
+  color: #fff;
+  padding: 20px 0;
+  border-radius: 20px;
+}
+
+.insights h2 {
+  padding-bottom: 20px;
+  color: #01DB85;
+}
+
+.insights div img {
+  width: 10%;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.insights-txt {
+  text-align: left;
+  font-style: italic;
+  padding: 5px;
+}
+
+.insights-txt blockquote {
+  padding: 0 20px 10px 10px;
+}

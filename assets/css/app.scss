@@ -1,0 +1,293 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import 'icomoon';
+
+// ** VARS
+// * COLORS
+$mainBackgroundColor: #1F1F2F;
+$green: #01DB85;
+$btnGreen: #1abb9c;
+$red: #FB494D;
+// * END COLORS
+// ** END VARS
+
+// * Fonts
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url(../fonts/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+// * END Fonts
+
+/* KEY-Frames */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ** Global styles ** */
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #191927;
+}
+
+blockquote {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+*:focus {
+    outline:none !important;
+}
+
+// * Scrollbar for Chrome
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: #292e33;
+}
+::-webkit-scrollbar-thumb {
+    background: $green;
+    border-radius: 20px;
+    &:hover {
+        background: $green;
+    }
+}
+// * END Scrollbar for Chrome
+
+// *** Global styles for tags
+
+// clears the 'X' in search input from Chrome & Internet Explorer
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+.btn {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    background: $btnGreen;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+}
+
+/* ** Navigation ** */
+
+.bg-dark {
+    background-color: $mainBackgroundColor!important;
+}
+
+.navbar {
+    box-shadow: 0 10px 19px -6px rgba(0,0,0,0.75);
+}
+
+.navbar-brand img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #84858E;
+    font-size: 1.2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: $green;
+}
+
+.navbar-dark .navbar-nav .nav-link i {
+    padding: 0 5px;
+}
+
+/* ** Header ** */
+
+// * Header
+header {
+    min-height: 400px;
+    background-image: linear-gradient(to bottom, transparent, #191927),  url('../images/header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px 0 50px;
+}
+// * END Header
+
+.header-txt {
+    color: #fff;
+    animation: fadeIn 5s;
+}
+
+.header-txt h1 {
+    color: $green;
+}
+
+.header-txt p {
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+/* ** Main section container * **/
+
+.section-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* ** Home Main section ** */
+
+/* Trades Widget */
+
+.tradingview-widget-container {
+    margin: 20px 0;
+}
+
+/* Trades */
+
+.trades-box {
+    background-color: $mainBackgroundColor;
+    color: #fff;
+    border-radius: 20px;
+    flex-grow: 0;
+}
+
+.trades-box:hover {
+    box-shadow: 0 0 3px 0 rgba(255,255,255,0.3);
+    transform: scale(1.01, 1.01);
+}
+
+.trades-box {
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.trades-img {
+    width: 50px;
+}
+
+.trades-actions {
+    background-color: #1D2245;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 10px 40px;
+}
+
+/* Insights */
+
+.insights {
+    background-color: $mainBackgroundColor;
+    color: #fff;
+    padding: 20px 0;
+    border-radius: 20px;
+}
+
+.insights h2 {
+    padding-bottom: 20px;
+    color: $green;
+}
+
+.insights div img {
+    width: 10%;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.insights-txt {
+    text-align: left;
+    font-style: italic;
+    padding: 5px;
+}
+
+.insights-txt blockquote {
+    padding: 0 20px 10px 10px;
+}
+
+/* ** Footer ** */
+
+footer {
+    margin-top: 20px;
+    background-color: $mainBackgroundColor;
+}
+
+footer p {
+    color: $green;
+}
+
+/* Contact info section */
+
+.social {
+    background-color: $mainBackgroundColor;
+}
+
+.social ul {
+    list-style: none;
+}
+
+.social ul li {
+    display: inline;
+    padding: 20px;
+}
+
+/* Hover effect for each social icon */
+
+.social li:hover i {
+    color: #fff;
+}
+
+.social li:nth-of-type(1):hover {
+    background-color: #4668b3;
+    transition: all 200ms ease-out;
+}
+
+.social i:nth-of-type(2):hover {
+    background-color: #de5745;
+    transition: all 200ms ease-out;
+}
+
+.social i:nth-of-type(3):hover {
+    background-color: #2fbbed;
+    transition: all 200ms ease-out;
+}
+
+.social i:nth-of-type(4):hover {
+    background-color: #d94348;
+    transition: all 200ms ease-in-out;
+}
+
+.social i:nth-of-type(5):hover {
+    background-color: #3079ff;
+    transition: all 200ms ease-out;
+}
+
+.social i:nth-of-type(6):hover {
+    background-color: #eb6397;
+    transition: all 200ms ease-out;
+}
+
+/* ** Media queries ** */
+
+@media screen and (max-width: 1200px) {
+
+    .section-container {
+        width: 95%;
+    }
+}
