@@ -1,7 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block trades_widget %}
+	<!-- Trades Widget -->
+	<div class="sticky-top tradingview-widget-container">
+		<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+			{"symbols":
+				[   {"title": "EUR/USD", "proName": "OANDA:EURUSD"},
+					{"description": "GBP/USD", "proName": "OANDA:GBPUSD"},
+					{"description": "USD/CAD", "proName": "OANDA:USDCAD"},
+					{"description": "USD/JPY", "proName": "FX:USDJPY"},
+					{"description": "AUD/USD", "proName": "FX_IDC:AUDUSD"},
+					{"description": "NZD/USD", "proName": "OANDA:NZDUSD"},
+					{"description": "EUR/AUD", "proName": "OANDA:EURAUD"},
+					{"description": "EUR/JPY", "proName": "FX:EURJPY"} ],
+					"colorTheme": "dark", "isTransparent": false, "locale": "en" }
+		</script>
+	</div>
+	<!-- END of Trades Widget -->
+{% endblock %}
+
+{% block body %}
 <!-- Header -->
 <header>
 	<div class="section-container">
-		<div class="header-txt text-center text-lg-left">
+		<div class="header-txt fade-in-left text-center text-lg-left">
 			<h1>Free Forex Signals</h1>
 			<p>Forex Simple Signals is a free forex signals service.
 				<br> Here you will find signals which are based on fundamental, sentiment and technical analisys.
@@ -16,30 +38,11 @@
 <!-- Main section container -->
 <div class="section-container">
 
-	<!-- Trades Widget -->
-	<div class="row">
-		<div class="col-12 tradingview-widget-container">
-			<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
-				{"symbols":
-					[   {"title": "EUR/USD", "proName": "OANDA:EURUSD"},
-						{"description": "GBP/USD", "proName": "OANDA:GBPUSD"},
-						{"description": "USD/CAD", "proName": "OANDA:USDCAD"},
-						{"description": "USD/JPY", "proName": "FX:USDJPY"},
-						{"description": "AUD/USD", "proName": "FX_IDC:AUDUSD"},
-						{"description": "NZD/USD", "proName": "OANDA:NZDUSD"},
-						{"description": "EUR/AUD", "proName": "OANDA:EURAUD"},
-						{"description": "EUR/JPY", "proName": "FX:EURJPY"} ],
-						"colorTheme": "dark", "isTransparent": false, "locale": "en" }
-			</script>
-		</div>
-	</div>
-	<!-- END of Trades Widget -->
-
 	<!-- Home Main Content -->
 	<div class="row">
 
 		<!-- Insights section -->
-		<div class="col-12 col-lg-4 order-1 order-md-0">
+		<div class="col-12 col-xl-4 order-1 order-xl-0">
 			<div class="insights text-center">
 				<h2>Insights</h2>
 				<div class="insights-txt d-flex justify-content-center align-items-center">
@@ -63,106 +66,156 @@
 		<!-- END of insights section -->
 
 		<!-- Trades section -->
-		<div class="col-12 col-lg-8 order-0 order-md-1">
+		<div class="trades col-12 col-xl-8 order-0 order-xl-1">
 			<!-- Asa vor arata toate "box"-urile cu tranzactii -->
-			<div class="trades-box d-flex justify-content-around align-items-center">
-				<div class="trades-pair">
-					<p><img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>GBP/USD</p>
-				</div>
-				<p class="r-col trades-actions">SELL</p>
-				<div class="t-price text-center"> <p>1.28485</p> </div>
-				<div class="profit_loss text-center">
-					<p> T/P: 1.2805</p>
-					<p> S/L: 1.2905</p>
-				</div>
-				<div class="trades-date text-center">
-					<p>Date</p>
-					<p>2019.10.23 11:52</p>
-				</div>
-				<div class="trades-status text-center">
-					<p>OnGoing</p>
-				</div>
-			</div>
+{#			<div class="trades-box d-flex justify-content-around align-items-center">#}
+{#				<div class="trades-pair">#}
+{#					<p><img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>GBP/USD</p>#}
+{#				</div>#}
+{#				<p class="r-col trades-actions">SELL</p>#}
+{#				<div class="t-price text-center"> <p>1.28485</p> </div>#}
+{#				<div class="profit_loss text-center">#}
+{#					<p> T/P: 1.2805</p>#}
+{#					<p> S/L: 1.2905</p>#}
+{#				</div>#}
+{#				<div class="trades-date text-center">#}
+{#					<p>Date</p>#}
+{#					<p>2019.10.23 11:52</p>#}
+{#				</div>#}
+{#				<div class="trades-status text-center">#}
+{#					<p>OnGoing</p>#}
+{#				</div>#}
+{#			</div>#}
 
-			<div class="trades-box d-flex justify-content-around align-items-center">
-				<div class="trades-pair">
-					<p><img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>GBP/USD</p>
-				</div>
-				<p class="r-col trades-actions">SELL</p>
-				<div class="t-price text-center"> <p>1.28485</p> </div>
-				<div class="profit_loss text-center">
-					<p> T/P: 1.2805</p>
-					<p> S/L: 1.2905</p>
-				</div>
-				<div class="trades-date text-center">
-					<p>Date</p>
-					<p>2019.10.23 11:52</p>
-				</div>
-				<div class="trades-status text-center">
-					<p>OnGoing</p>
-				</div>
-			</div>
+{#			<div class="trades-box d-flex justify-content-around align-items-center">#}
+{#				<div class="trades-pair">#}
+{#					<p><img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD</p>#}
+{#				</div>#}
+{#				<p class="r-col trades-actions">SELL</p>#}
+{#				<div class="t-price text-center"> <p>1.1147</p> </div>#}
+{#				<div class="profit_loss text-center">#}
+{#					<p> T/P: 1.11168</p>#}
+{#					<p> S/L: 1.11617</p>#}
+{#				</div>#}
+{#				<div class="trades-date text-center">#}
+{#					<p>Date</p>#}
+{#					<p>2019.10.22 10:03</p>#}
+{#				</div>#}
+{#				<div class="trades-status text-center">#}
+{#					<p>Closed</p>#}
+{#					<p> @1.11168</p>#}
+{#					<p class="g-col"> Profit: 30.2 pips</p>#}
+{#				</div>#}
+{#			</div>#}
 
-			<div class="trades-box d-flex justify-content-around align-items-center">
-				<div class="trades-pair">
-					<p><img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>GBP/USD</p>
-				</div>
-				<p class="r-col trades-actions">SELL</p>
-				<div class="t-price text-center"> <p>1.28485</p> </div>
-				<div class="profit_loss text-center">
-					<p> T/P: 1.2805</p>
-					<p> S/L: 1.2905</p>
-				</div>
-				<div class="trades-date text-center">
-					<p>Date</p>
-					<p>2019.10.23 11:52</p>
-				</div>
-				<div class="trades-status text-center">
-					<p>OnGoing</p>
-				</div>
-			</div>
-
-			<div class="trades-box d-flex justify-content-around align-items-center">
-				<div class="trades-pair">
-					<p><img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD</p>
-				</div>
-				<p class="r-col trades-actions">SELL</p>
-				<div class="t-price text-center"> <p>1.1147</p> </div>
-				<div class="profit_loss text-center">
-					<p> T/P: 1.11168</p>
-					<p> S/L: 1.11617</p>
-				</div>
-				<div class="trades-date text-center">
-					<p>Date</p>
-					<p>2019.10.22 10:03</p>
-				</div>
-				<div class="trades-status text-center">
-					<p>Closed</p>
-					<p> @1.11168</p>
-					<p class="g-col"> Profit: 30.2 pips</p>
-				</div>
-			</div>
-
-			<div class="trades-box d-flex justify-content-around align-items-center">
-				<div class="trades-pair">
-					<p><img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD</p>
-				</div>
-				<p class="r-col trades-actions">SELL</p>
-				<div class="t-price text-center"> <p>1.1147</p> </div>
-				<div class="profit_loss text-center">
-					<p> T/P: 1.11168</p>
-					<p> S/L: 1.11617</p>
-				</div>
-				<div class="trades-date text-center">
-					<p>Date</p>
-					<p>2019.10.22 10:03</p>
-				</div>
-				<div class="trades-status text-center">
-					<p>Closed</p>
-					<p> @1.11168</p>
-					<p class="g-col"> Profit: 30.2 pips</p>
-				</div>
-			</div>
+{#			<div class="trades-box d-flex justify-content-around align-items-center">#}
+{#				<div class="trades-pair">#}
+{#					<p><img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD</p>#}
+{#				</div>#}
+{#				<p class="r-col trades-actions">SELL</p>#}
+{#				<div class="t-price text-center"> <p>1.1147</p> </div>#}
+{#				<div class="profit_loss text-center">#}
+{#					<p> T/P: 1.11168</p>#}
+{#					<p> S/L: 1.11617</p>#}
+{#				</div>#}
+{#				<div class="trades-date text-center">#}
+{#					<p>Date</p>#}
+{#					<p>2019.10.22 10:03</p>#}
+{#				</div>#}
+{#				<div class="trades-status text-center">#}
+{#					<p>Closed</p>#}
+{#					<p> @1.11168</p>#}
+{#					<p class="g-col"> Profit: 30.2 pips</p>#}
+{#				</div>#}
+{#			</div>#}
+			<table class="table">
+				<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Trades</th>
+					<th scope="col">Action</th>
+					<th scope="col">Price</th>
+					<th scope="col">Profit/Loss</th>
+					<th scope="col" class="trades-date">Date</th>
+					<th scope="col">Status</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>
+						<img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD
+					</td>
+					<td>
+						<span class="sell trades-actions">SELL</span>
+					</td>
+					<td>1.1147</td>
+					<td>
+						T/P: 1.11168 <br/>
+						S/L: 1.11617
+					</td>
+					<td class="trades-date">
+						2019.10.22 10:03
+					</td>
+					<td>
+						<span>Closed</span> <br/>
+						<span> @1.11168</span> <br/>
+						<span class="g-col"> Profit: 30.2 pips</span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>
+						<img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD
+					</td>
+					<td>
+						<span class="buy trades-actions">BUY</span>
+					</td>
+					<td>1.114723</td>
+					<td>
+						T/P: 1.11168 <br/>
+						S/L: 1.11617
+					</td>
+					<td class="trades-date">
+						2019.10.22 10:03
+					</td>
+					<td>
+						Ongoing
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>
+						<img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD
+					</td>
+					<td>
+						<span class="sell trades-actions">SELL</span>
+					</td>
+					<td>1.1147</td>
+					<td>
+						T/P: 1.11168 <br/>
+						S/L: 1.11617
+					</td>
+					<td class="trades-date">
+						2019.10.22 10:03
+					</td>
+					<td>
+						Ongoing
+					</td>
+				</tr>
+				</tbody>
+			</table>
 		</div> <!-- END of Trades section -->
 	</div> <!-- END of Home section container-->
 </div><!-- END of Main section container-->
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('home') }}
+{% endblock %}

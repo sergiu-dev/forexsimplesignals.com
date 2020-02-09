@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
     <body>
 
@@ -45,6 +47,8 @@
         </div>
     </nav>
     <!-- END of Navigation -->
+
+    {% block trades_widget %}{% endblock %}
 
     {% block body %}{% endblock %}
 
@@ -100,6 +104,12 @@
     </footer>
     <!-- END of Footer -->
 
-    {% block javascripts %}{% endblock %}
+    <button class="btn btn-top hide" id="btnTop">
+        <i class="icon-chevron-up"></i>
+    </button>
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
 </body>
 </html>

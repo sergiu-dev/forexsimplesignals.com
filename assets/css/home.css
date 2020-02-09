@@ -10,7 +10,6 @@ header {
 
 .header-txt {
   color: #fff;
-  animation: fadeIn 5s;
 }
 
 .header-txt h1 {
@@ -25,10 +24,23 @@ header {
 /* ** Home Main section ** */
 /* Trades Widget */
 .tradingview-widget-container {
-  margin: 20px 0;
+  top: 65px;
 }
 
 /* Trades */
+.trades .table {
+  background-color: #1F1F2F;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+.trades .table td, .trades .table th {
+  vertical-align: middle;
+  text-align: center;
+}
+.trades .table thead th {
+  border-top: unset;
+}
+
 .trades-box {
   background-color: #1F1F2F;
   color: #fff;
@@ -62,7 +74,7 @@ header {
   background-color: #1F1F2F;
   color: #fff;
   padding: 20px 0;
-  border-radius: 20px;
+  border-radius: 0.5rem;
 }
 
 .insights h2 {
@@ -84,6 +96,13 @@ header {
 
 .insights-txt blockquote {
   padding: 0 20px 10px 10px;
+}
+
+/* Special styling for the main table */
+@media screen and (max-width: 850px) {
+  .trades-date {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=home.css.map */
