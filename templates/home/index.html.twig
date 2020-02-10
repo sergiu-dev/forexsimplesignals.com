@@ -77,14 +77,16 @@
 		</div>
 	<!-- END of Trades section -->
 		<!-- Insights section -->
-		<div class="insights col-12 col-xl-4">
-			<h2 class="text-center">Insights</h2>
-			{% for insight in insights  %}
-				{{ include('elements/insights_box.html.twig', {
-					'image': insight.image,
-					'content': insight.content
-				}) }}
-			{% endfor %}
+		<div class="col-12 col-xl-4">
+			<div class="insights">
+				<h2 class="text-center">Insights</h2>
+				{% for insight in insights  %}
+					{{ include('elements/insights_box.html.twig', {
+						'image': insight.image,
+						'content': insight.content
+					}) }}
+				{% endfor %}
+			</div>
 		</div>
 		<!-- END of insights section -->
 	</div> <!-- END of Home section container-->
