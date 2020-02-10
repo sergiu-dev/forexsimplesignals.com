@@ -17,6 +17,11 @@ header {
   padding: 100px 0 50px;
 }
 
+.header-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .header-txt {
   color: #fff;
   & h1 {
@@ -51,6 +56,7 @@ header {
 
 .trades-actions {
   background-color: #1D2245;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1), 0 10px 30px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   font-weight: bold;
   padding: 10px 40px;
@@ -60,15 +66,15 @@ header {
 .insights {
   background-color: #1F1F2F;
   color: #fff;
-  padding: 20px 0;
+  padding: 20px 10px 0;
   border-radius: .5rem;
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1), 0 10px 30px 0 rgba(0, 0, 0, 0.2);
   & h2 {
     color: #01DB85;
   }
   & .insights-img-wrapper {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     overflow: hidden;
     border-radius: 50%;
   } & .insights-img-wrapper img {

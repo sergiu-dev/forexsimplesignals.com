@@ -67,6 +67,11 @@ class Signal
      */
     private $status;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $tradePairImage;
+
     public function getSignalId(): ?int
     {
         return $this->signalId;
@@ -195,6 +200,18 @@ class Signal
     public function setTradePair(?string $tradePair): self
     {
         $this->tradePair = $tradePair;
+
+        return $this;
+    }
+
+    public function getTradePairImage(): ?string
+    {
+        return $this->tradePairImage;
+    }
+
+    public function setTradePairImage(?string $tradePairImage): self
+    {
+        $this->tradePairImage = $tradePairImage;
 
         return $this;
     }

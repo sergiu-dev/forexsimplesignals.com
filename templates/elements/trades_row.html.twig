@@ -1,0 +1,32 @@
+<tr>
+    <th scope="row">{{ loop.index }}</th>
+    <td>
+        <img class="trades-img" src="{{ asset('build/images/trades_pair/' ~ image ) }}" alt="trade pair"/>
+        {{ trade_pair | upper }}
+    </td>
+    <td>
+        <span class="{{ trade_action }} trades-actions">{{ trade_action | upper }}</span>
+    </td>
+    <td>{{ price }}</td>
+    <td>
+        T/P: {{ take_profit }} <br/>
+        S/L: {{ stop_loss }}
+    </td>
+    <td class="trades-date">
+        {{ created|date('d.m.Y / h:i') }}
+    </td>
+    <td class="closed-date">
+        {% if closed is not null %}
+            {{ closed|date('d.m.Y / h:i') }}
+        {% else %}
+            -
+        {% endif %}
+    </td>
+    <td>
+        <span>{{ status | upper }}</span> <br/>
+        {% if closed_price is not null and profit is not null %}
+        <span> @{{ closed_price }}</span> <br/>
+        <span class="g-col"> Profit: {{ profit }} pips</span>
+        {% endif %}
+    </td>
+</tr>

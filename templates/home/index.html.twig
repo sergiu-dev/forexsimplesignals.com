@@ -22,12 +22,12 @@
 {% block body %}
 <!-- Header -->
 <header>
-	<div class="section-container">
+	<div class="header-wrapper">
 		<div class="header-txt fade-in-left text-center text-lg-left">
 			<h1>Free Forex Signals</h1>
 			<p>Forex Simple Signals is a free forex signals service.
 				<br> Here you will find signals which are based on fundamental, sentiment and technical analisys.
-				<br> You will not find anything about learning because internet is full of it.
+				<br> You won't find anything about learning because the internet is full of it.
 			</p>
 			<button class="btn btn-primary">Read more</button>
 		</div>
@@ -36,51 +36,13 @@
 <!-- END of Header -->
 
 <!-- Main section container -->
-<div class="section-container">
+<main class="main-content">
 
 	<!-- Home Main Content -->
 	<div class="row">
 
-		<!-- Insights section -->
-		<div class="col-12 col-xl-4 order-1 order-xl-0">
-			<div class="insights">
-				<h2 class="text-center">Insights</h2>
-				<div class="insights-box py-3 d-flex">
-					<div class="col-3 px-0 align-self-center d-flex justify-content-center">
-						<div class="insights-img-wrapper">
-							<img src="{{ asset('build/images/morgan_stanley.jpg') }}">
-						</div>
-					</div>
-					<div class="col-9 pl-0">
-						<blockquote class="d-inline">Morgan Stanley announced that they entered long on GBP/JPY at 104.65unced that they entered long on GBP/JPY at 10unced that they entered long on GBP/JPY at 10unced that they entered long on GBP/JPY at 10.</blockquote>
-					</div>
-				</div>
-				<div class="insights-box py-3 d-flex">
-					<div class="col-3 px-0 align-self-center d-flex justify-content-center">
-						<div class="insights-img-wrapper">
-							<img src="{{ asset('build/images/morgan_stanley.jpg') }}">
-						</div>
-					</div>
-					<div class="col-9 pl-0">
-						<blockquote class="d-inline">Morgan Stanley announced that they entered long on GBP/JPY at 104.65unced that they entered long on GBP/JPY at 10unced that they entered long on GBP/JPY at 10unced that they entered long on GBP/JPY at 10.</blockquote>
-					</div>
-				</div>
-				<div class="insights-box py-3 d-flex">
-					<div class="col-3 px-0 align-self-center d-flex justify-content-center">
-						<div class="insights-img-wrapper">
-							<img src="{{ asset('build/images/morgan_stanley.jpg') }}">
-						</div>
-					</div>
-					<div class="col-9 pl-0">
-						<blockquote class="d-inline">Morgan Stanley announced that they entered long on GBP/JPY at 104.65unced that they entered long on GBP/JPY at 10unced that they entered long on GBP/JPY at 10unced that they entered long on GBP/JPY at 10.</blockquote>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- END of insights section -->
-
 		<!-- Trades section -->
-		<div class="trades col-12 col-xl-8 order-0 order-xl-1">
+		<div class="trades col-12 col-xl-8">
 			<table class="table">
 				<thead>
 				<tr>
@@ -90,78 +52,43 @@
 					<th scope="col">Price</th>
 					<th scope="col">Profit/Loss</th>
 					<th scope="col" class="trades-date">Date</th>
+					<th scope="col" class="closed-date">Closed</th>
 					<th scope="col">Status</th>
 				</tr>
 				</thead>
 				<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>
-						<img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD
-					</td>
-					<td>
-						<span class="sell trades-actions">SELL</span>
-					</td>
-					<td>1.1147</td>
-					<td>
-						T/P: 1.11168 <br/>
-						S/L: 1.11617
-					</td>
-					<td class="trades-date">
-						2019.10.22 10:03
-					</td>
-					<td>
-						<span>Closed</span> <br/>
-						<span> @1.11168</span> <br/>
-						<span class="g-col"> Profit: 30.2 pips</span>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>
-						<img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD
-					</td>
-					<td>
-						<span class="buy trades-actions">BUY</span>
-					</td>
-					<td>1.114723</td>
-					<td>
-						T/P: 1.11168 <br/>
-						S/L: 1.11617
-					</td>
-					<td class="trades-date">
-						2019.10.22 10:03
-					</td>
-					<td>
-						Ongoing
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>
-						<img class="trades-img" src="{{ asset('build/images/eurusd.png') }}"/>EUR/USD
-					</td>
-					<td>
-						<span class="sell trades-actions">SELL</span>
-					</td>
-					<td>1.1147</td>
-					<td>
-						T/P: 1.11168 <br/>
-						S/L: 1.11617
-					</td>
-					<td class="trades-date">
-						2019.10.22 10:03
-					</td>
-					<td>
-						Ongoing
-					</td>
-				</tr>
+				{% for signal in signals%}
+					{{ include('elements/trades_row.html.twig', {
+						'image': signal.tradePairImage,
+						'trade_pair': signal.tradePair,
+						'trade_action': signal.tradeAction,
+						'price': signal.price,
+						'created': signal.created,
+						'take_profit': signal.takeProfit,
+						'stop_loss': signal.stopLoss,
+						'status': signal.status,
+						'closed': signal.closed,
+						'closed_price': signal.closedPrice,
+						'profit': signal.profit
+					}) }}
+				{% endfor %}
 				</tbody>
 			</table>
 		</div>
 	<!-- END of Trades section -->
+		<!-- Insights section -->
+		<div class="insights col-12 col-xl-4">
+			<h2 class="text-center">Insights</h2>
+			{% for insight in insights  %}
+				{{ include('elements/insights_box.html.twig', {
+					'image': insight.image,
+					'content': insight.content
+				}) }}
+			{% endfor %}
+		</div>
+		<!-- END of insights section -->
 	</div> <!-- END of Home section container-->
-</div><!-- END of Main section container-->
+</main><!-- END of Main section container-->
 {% endblock %}
 
 {% block stylesheets %}

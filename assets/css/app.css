@@ -2,7 +2,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon.eot"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.svg") format("svg");
+  src: url("../fonts/icomoon.eot") format("embedded-opentype"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,29 +24,70 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-chevron-up:before {
-  content: "";
+[class^=icon-]:before {
+  vertical-align: text-bottom;
 }
 
-.icon-signals:before {
-  content: "";
+.icon-chevron-down:before {
+  content: "";
+}
+
+.icon-chevron-up:before {
+  content: "";
+}
+
+.icon-about:before {
+  content: "";
+}
+
+.icon-chart:before {
+  content: "";
+}
+
+.icon-envelope:before {
+  content: "";
 }
 
 .icon-facebook .path1:before {
-  content: "";
-  color: #3b5999;
+  content: "";
+  color: #3a5ba0;
 }
 
 .icon-facebook .path2:before {
+  content: "";
+  margin-left: -1em;
+  color: white;
+}
+
+.icon-home:before {
+  content: "";
+}
+
+.icon-linkedin .path1:before {
+  content: "";
+  color: #2867b2;
+}
+
+.icon-linkedin .path2:before {
+  content: "";
+  margin-left: -1em;
+  color: white;
+}
+
+.icon-linkedin .path3:before {
+  content: "";
+  margin-left: -1em;
+  color: white;
+}
+
+.icon-linkedin .path4:before {
   content: "";
   margin-left: -1em;
   color: white;
 }
 
-.icon-facebook .path3:before {
+.icon-search:before {
   content: "";
-  margin-left: -1em;
-  color: #30487c;
 }
 
 .icon-twitter .path1:before {
@@ -60,16 +101,15 @@
   color: white;
 }
 
-.icon-about:before {
-  content: "";
+.icon-youtube .path1:before {
+  content: "";
+  color: #c2191e;
 }
 
-.icon-envelope:before {
-  content: "";
-}
-
-.icon-home:before {
-  content: "";
+.icon-youtube .path2:before {
+  content: "";
+  margin-left: -1em;
+  color: white;
 }
 
 @font-face {
@@ -148,12 +188,19 @@
 }
 
 /* ** Global styles ** */
+body, html {
+  min-height: 100vh;
+  position: relative;
+}
+
 body {
   font-family: "Source Sans Pro", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   background-color: #191927;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 blockquote {
@@ -166,6 +213,18 @@ p {
 
 *:focus {
   outline: none !important;
+}
+
+.main-content {
+  height: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 350px;
+  /*compensating for the footer's height*/
 }
 
 .show {
@@ -324,14 +383,11 @@ input[type=search]::-ms-reveal {
   padding: 0 5px;
 }
 
-/* ** Main section container * **/
-.section-container {
-  width: 95%;
-  margin: 0 auto;
-}
-
 /* ** Footer ** */
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #1F1F2F;
   margin-top: 20px;
   padding: 20px 0 0;
@@ -377,5 +433,17 @@ footer h5 {
 }
 
 /* ** Media queries ** */
+@media screen and (max-width: 992px) {
+  .main-content {
+    padding-bottom: 450px;
+    /*compensating for the footer's height*/
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding-bottom: 700px;
+    /*compensating for the footer's height*/
+  }
+}
 
 /*# sourceMappingURL=app.css.map */

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,25 +22,25 @@
         <div class="collapse navbar-collapse col-lg-10 pr-0" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ path('home') }}">
                         <span class="icon-home"></span>
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="icon-signals"></span>
+                    <a class="nav-link" href="{{ path('signals') }}">
+                        <span class="icon-chart"></span>
                         All signals
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ path('about') }}">
                         <span class="icon-about"></span>
                         About
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ path('contact') }}">
                         <span class="icon-envelope"></span>
                         Contact
                     </a>
@@ -76,15 +78,18 @@
                         <i class="icon-envelope mt-1"></i>
                         <span>contact@forex.com</span>
                     </a>
-                    <div class="social-icons col-sm-8 text-center">
+                    <div class="social-icons mt-auto">
                         <a href="#" title="LinkedIn">
                             <i class="icon-linkedin"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
                         </a>
                         <a href="#" title="Facebook">
-                            <span class="icon-facebook"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+                            <i class="icon-facebook"><span class="path1"></span><span class="path2"></span></i>
                         </a>
                         <a href="#" title="Twitter">
-                            <span class="icon-twitter"><span class="path1"></span><span class="path2"></span></span>
+                            <i class="icon-twitter"><span class="path1"></span><span class="path2"></span></i>
+                        </a>
+                        <a href="#" title="Youtube">
+                            <i class="icon-youtube"><span class="path1"></span><span class="path2"></span></i>
                         </a>
                     </div>
                     <hr class="d-block d-md-none"/>
