@@ -10,14 +10,14 @@
     <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
-        <a class="navbar-brand col-6 col-md-4 col-lg-2" href="#">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand col-6 col-md-4 col-lg-2 pl-0" href="#">
             <img src="{{ asset('build/images/logo.png') }}" alt="logo"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse col-lg-10" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse col-lg-10 pr-0" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">
@@ -53,53 +53,58 @@
     {% block body %}{% endblock %}
 
     <!-- Footer -->
-    <footer class="align-items-center">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light col-sm-12 col-md-8">
-            <div class="nav-wrapper">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="icon-home"></span>
-                            Home
+    <footer>
+        <section class="footer-wrapper container">
+            <div class="row justify-content-between pb-3">
+                <div class="footer-about d-flex flex-column col-12 col-lg-4">
+                    <h5 class="section-title">A little bit about us</h5>
+                    <p class="footer-about-txt">
+                        Magnis modipsae voloratati andigen daepeditem
+                        quiate re porem que aut labor. Laceaque eictemperum quiae sitiorem rest
+                        non restibusaes maio es dem tumquam.
+                    </p>
+                    <div class="mt-auto pb-2">
+                        <a href="#">
+                            <span>More about us</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="icon-signals"></span>
-                            All signals
+                    </div>
+                    <hr class="d-block d-md-none"/>
+                </div>
+                <div class="footer-contact d-flex flex-column col-12 col-md-6 col-lg-4 col-xl-3">
+                    <h5 class="section-title">Get in touch</h5>
+                    <a class="footer-contact-mail d-flex align-items-center pb-2" href="mailto:contact@forex.com?Subject=Hello" target="_top" title="Send us an email">
+                        <i class="icon-envelope mt-1"></i>
+                        <span>contact@forex.com</span>
+                    </a>
+                    <div class="social-icons col-sm-8 text-center">
+                        <a href="#" title="LinkedIn">
+                            <i class="icon-linkedin"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="icon-about"></span>
-                            About
+                        <a href="#" title="Facebook">
+                            <span class="icon-facebook"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="icon-envelope"></span>
-                            Contact
+                        <a href="#" title="Twitter">
+                            <span class="icon-twitter"><span class="path1"></span><span class="path2"></span></span>
                         </a>
-                    </li>
-                </ul>
+                    </div>
+                    <hr class="d-block d-md-none"/>
+                </div>
+                <div class="footer-newsletter d-flex flex-column col-12 col-md-6 col-lg-4">
+                    <h5 class="section-title">Free updates</h5>
+                    <p>
+                        Daca doriti sa primiti notificari pentru noile .... si
+                        sa fiti la curent cu toate noutatile de pe site,
+                        please subscribe
+                    </p>
+                    <form class="single-input mt-auto form-inline footer-text-content-box">
+                        <input class="form-control col-12" type="email" placeholder="Email address" aria-label="subscribe">
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
-        </nav>
-
-        <!-- Section social icons -->
-        <div class="social col-sm-8 text-center">
-            <ul>
-                <li>
-                    <span class="icon-facebook"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                </li>
-                <li>
-                    <span class="icon-twitter"><span class="path1"></span><span class="path2"></span></span>
-                </li>
-            </ul>
-        </div>
-        <!-- END of social icons section-->
-
-        <div class="col-sm-12 col-md-4 text-center">
-            <p>&copy; 2019 Forex Simple Signals. All rights reserved.</p>
+        </section>
+        <div class="copyright row">
+            <p>Copyright &copy; {{ 'now'|date('Y') }} Forex Simple Signals. All rights reserved.</p>
         </div>
     </footer>
     <!-- END of Footer -->
