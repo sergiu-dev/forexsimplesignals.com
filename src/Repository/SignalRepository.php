@@ -19,22 +19,19 @@ class SignalRepository extends ServiceEntityRepository
         parent::__construct($registry, Signal::class);
     }
 
-    // /**
-    //  * @return Signal[] Returns an array of Signal objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+    * @return Signal[] Returns an array of Signal objects
+    */
+    public function findAllSignalsLimited()
     {
         return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
+            ->addOrderBy('s.status', 'DESC')
+	        ->addOrderBy('s.created', 'DESC')
+            ->setMaxResults(20)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Signal

@@ -1,7 +1,7 @@
 <tr>
     <th scope="row">{{ loop.index }}</th>
     <td class="trades-pair">
-        <img class="trades-img pr-1" src="{{ asset('build/images/trades_pair/' ~ image ) }}" alt="trade pair"/>
+        <img class="trades-img pr-1" src="{{ asset('build/images/trades_pair/' ~ image ~ '.svg' ) }}" alt="trade pair"/>
         {{ trade_pair | upper }}
     </td>
     <td>
@@ -13,20 +13,19 @@
         S/L: {{ stop_loss }}
     </td>
     <td class="trades-date">
-        {{ created|date('d.m.Y / h:i') }}
-    </td>
-    <td class="closed-date">
-        {% if closed is not null %}
-            {{ closed|date('d.m.Y / h:i') }}
-        {% else %}
-            -
-        {% endif %}
+        {{ created|date('h:i') }} <br/>
+        {{ created|date('d M Y') }}
     </td>
     <td>
-        <span>{{ status | upper }}</span> <br/>
+        <span class="font-weight-bold {{ status is same as('ongoing') ? 'g-col' : 'r-col' }}">
+            {{ status | upper }}
+        </span> <br/>
+        {% if closed is not null %}
+            <span class="closed-date">{{ closed|date('d.m.Y / h:i') }}</span>
+        {% endif %}
         {% if closed_price is not null and profit is not null %}
-        <span> @{{ closed_price }}</span> <br/>
-        <span class="{{ profit < 0 ? 'r-col' : 'g-col' }}"> Profit: {{ profit }} pips</span>
+        <span class="font-weight-bold"> @{{ closed_price }}</span> <br/>
+        <span class="font-weight-bold {{ profit < 0 ? 'r-col' : 'g-col' }}"> Profit: {{ profit }} pips</span>
         {% endif %}
     </td>
 </tr>

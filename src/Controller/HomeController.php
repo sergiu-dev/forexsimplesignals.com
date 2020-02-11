@@ -18,8 +18,8 @@ class HomeController extends AbstractController {
      */
 	public function index(SignalRepository $signalRepository, InsightRepository $insightRepository) :Response {
 
-		$signals = $signalRepository->findAll();
-		$insights = $insightRepository->findAll();
+		$signals = $signalRepository->findAllSignalsLimited();
+		$insights = $insightRepository->findAllInsightsLimited();
 
 		return $this->render('home/index.html.twig', [
 			'signals' => $signals,

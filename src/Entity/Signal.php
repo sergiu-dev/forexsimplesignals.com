@@ -13,7 +13,7 @@ class Signal
 	/**
 	 * @ORM\Id()
 	 * @ORM\CustomIdGenerator()
-	 * @ORM\Column(type="integer", unique=true)
+	 * @ORM\Column(type="bigint", unique=true)
      */
     private $signalId;
 

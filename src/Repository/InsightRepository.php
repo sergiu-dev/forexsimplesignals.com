@@ -19,22 +19,18 @@ class InsightRepository extends ServiceEntityRepository
         parent::__construct($registry, Insight::class);
     }
 
-    // /**
-    //  * @return Insight[] Returns an array of Insight objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     /**
+      * @return Insight[] Returns an array of Insight objects
+      */
+    public function findAllInsightsLimited()
     {
         return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('i.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('i.id', 'DESC')
+            ->setMaxResults(20)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Insight
