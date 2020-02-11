@@ -1,7 +1,7 @@
 <tr>
     <th scope="row">{{ loop.index }}</th>
-    <td>
-        <img class="trades-img" src="{{ asset('build/images/trades_pair/' ~ image ) }}" alt="trade pair"/>
+    <td class="trades-pair">
+        <img class="trades-img pr-1" src="{{ asset('build/images/trades_pair/' ~ image ) }}" alt="trade pair"/>
         {{ trade_pair | upper }}
     </td>
     <td>

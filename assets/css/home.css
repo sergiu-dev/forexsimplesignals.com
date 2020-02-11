@@ -43,6 +43,10 @@ header {
   width: 50px;
 }
 
+.trades-pair {
+  font-weight: bold;
+}
+
 .trades-actions {
   background-color: #1D2245;
   border-radius: 10px;
