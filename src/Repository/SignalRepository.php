@@ -20,10 +20,9 @@ class SignalRepository extends ServiceEntityRepository
     }
 
     /**
-    * @return Signal[] Returns an array of Signal objects
+    * @return Signal[] Returns an array of Signal objects ordered by status and created
     */
-    public function findAllSignalsLimited()
-    {
+    public function findAllSignalsLimited(): array {
         return $this->createQueryBuilder('s')
             ->addOrderBy('s.status', 'DESC')
 	        ->addOrderBy('s.created', 'DESC')
@@ -33,15 +32,16 @@ class SignalRepository extends ServiceEntityRepository
         ;
     }
 
-    /*
-    public function findOneBySomeField($value): ?Signal
-    {
+    /**
+     * @return Signal[] Returns an array of Signal objects
+     */
+    public function findAllClosedSignals(): array {
         return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
+            ->where("s.status = 'closed'")
+            ->orderBy('s.created', 'DESC')
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
     }
-    */
+
 }

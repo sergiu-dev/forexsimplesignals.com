@@ -132,13 +132,11 @@ hr {
 
 .main-content {
     height: 100%;
-    max-width: 95%;
     margin: 0 auto;
     overflow: hidden;
     display: block;
     position: relative;
     padding-top: 30px;
-    padding-bottom: 350px; /*compensating for the footer's height*/
 }
 
 .show {
@@ -345,22 +343,5 @@ footer {
     & p {
         color: $green;
         padding: 0;
-    }
-}
-
-/* ** Media queries ** */
-
-@media screen and (max-width: 992px) {
-
-    .main-content {
-        padding-bottom: 450px; /*compensating for the footer's height*/
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-
-    .main-content {
-        padding-bottom: 700px; /*compensating for the footer's height*/
     }
 }

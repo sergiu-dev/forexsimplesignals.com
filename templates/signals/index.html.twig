@@ -3,8 +3,67 @@
 {% block body %}
 
     <!-- Main section container -->
-    <main class="main-content">
+    <main class="main-content container">
+        {# total items count #}
+        <div class="count">
+            <p class="font-weight-bold pb-3">In total there are {{ pagination.getTotalItemCount }} elements</p>
+        </div>
+        <!-- Trades section -->
+        <div class="trades col-12 d-none d-md-block">
+            <table class="trades-table table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Trades</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Profit/Loss</th>
+                    <th scope="col" class="trades-date">Created at</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for signal in pagination %}
+                    {{ include('elements/trades_row.html.twig', {
+                        'image': signal.tradePairImage,
+                        'trade_pair': signal.tradePair,
+                        'trade_action': signal.tradeAction,
+                        'price': signal.price,
+                        'created': signal.created,
+                        'take_profit': signal.takeProfit,
+                        'stop_loss': signal.stopLoss,
+                        'status': signal.status,
+                        'closed': signal.closed,
+                        'closed_price': signal.closedPrice,
+                        'profit': signal.profit
+                    }) }}
+                {% endfor %}
+                </tbody>
+            </table>
+            {# display navigation #}
+            {{ knp_pagination_render(pagination) }}
+        </div>
 
+        <div class="trades col-12 d-block d-md-none">
+            {% for signal in pagination %}
+                {{ include('elements/trades_box.html.twig', {
+                    'image': signal.tradePairImage,
+                    'trade_pair': signal.tradePair,
+                    'trade_action': signal.tradeAction,
+                    'price': signal.price,
+                    'created': signal.created,
+                    'take_profit': signal.takeProfit,
+                    'stop_loss': signal.stopLoss,
+                    'status': signal.status,
+                    'closed': signal.closed,
+                    'closed_price': signal.closedPrice,
+                    'profit': signal.profit
+                }) }}
+            {% endfor %}
+            {# display navigation #}
+            {{ knp_pagination_render(pagination) }}
+        </div>
+        <!-- END of Trades section -->
     </main>
 
 {% endblock %}

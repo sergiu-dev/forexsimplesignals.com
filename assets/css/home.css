@@ -1,3 +1,9 @@
+.main-content {
+  max-width: 95%;
+  padding-bottom: 350px;
+  /*compensating for the footer's height*/
+}
+
 /* ** Header ** */
 header {
   min-height: 400px;
@@ -24,7 +30,7 @@ header {
   font-size: 20px;
 }
 
-/* ** Home Main section ** */
+/* ** Main section ** */
 /* Trades */
 .trades .table {
   background-color: #1F1F2F;
@@ -87,6 +93,20 @@ header {
 }
 .insights hr:last-child {
   display: none;
+}
+
+/* ** Media queries ** */
+@media screen and (max-width: 992px) {
+  .main-content {
+    padding-bottom: 450px;
+    /*compensating for the footer's height*/
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding-bottom: 700px;
+    /*compensating for the footer's height*/
+  }
 }
 
 /*# sourceMappingURL=home.css.map */

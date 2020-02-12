@@ -215,16 +215,20 @@ p {
   outline: none !important;
 }
 
+hr {
+  width: 95%;
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(105, 128, 159, 0), rgba(105, 128, 159, 0.75), rgba(105, 128, 159, 0));
+}
+
 .main-content {
   height: 100%;
-  max-width: 95%;
   margin: 0 auto;
   overflow: hidden;
   display: block;
   position: relative;
   padding-top: 30px;
-  padding-bottom: 350px;
-  /*compensating for the footer's height*/
 }
 
 .show {
@@ -402,14 +406,6 @@ footer h5 {
   width: max-content;
   padding: 10px 0 0;
 }
-footer hr {
-  width: 95%;
-  border: none;
-  height: 1px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  background-image: linear-gradient(to right, rgba(105, 128, 159, 0), rgba(105, 128, 159, 0.75), rgba(105, 128, 159, 0));
-}
 
 .footer-wrapper .section-title {
   margin: 0 0 20px;
@@ -438,20 +434,6 @@ footer hr {
 .copyright p {
   color: #01DB85;
   padding: 0;
-}
-
-/* ** Media queries ** */
-@media screen and (max-width: 992px) {
-  .main-content {
-    padding-bottom: 450px;
-    /*compensating for the footer's height*/
-  }
-}
-@media screen and (max-width: 768px) {
-  .main-content {
-    padding-bottom: 700px;
-    /*compensating for the footer's height*/
-  }
 }
 
 /*# sourceMappingURL=app.css.map */
