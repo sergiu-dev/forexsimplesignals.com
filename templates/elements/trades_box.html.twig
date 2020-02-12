@@ -1,0 +1,51 @@
+<div class="trades-box">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="trades-pair">
+            <img class="trades-img mr-2" src="{{ asset('build/images/trades_pair/' ~ image ~ '.svg' ) }}" alt="trade pair"/>
+            {{ trade_pair | upper }}
+        </div>
+        <div class="text-center">
+            <span class="font-weight-bold {{ status is same as('ongoing') ? 'g-col' : 'r-col' }}">
+            {{ status | upper }}
+            </span>
+        </div>
+    </div>
+
+    <div class="trades-date d-flex justify-content-between">
+        <p>Created at:</p>
+        <span>{{ created|date('d M Y / h:i') }}</span>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <p>Price:</p>
+        <span>{{ price }}</span>
+    </div>
+
+    <div>
+        <div class="d-flex justify-content-between">
+            <p>Take profit:</p> <span>{{ take_profit }}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+            <p>Stop loss:</p> <span>{{ stop_loss }}</span>
+        </div>
+    </div>
+    <div class="font-weight-bold">
+    {% if closed is not null %}
+        <div class="d-flex justify-content-between">
+            <p>Closed at:</p>
+            <span class="closed-date">{{ closed|date('d.m.Y / h:i') }}</span>
+        </div>
+    {% endif %}
+        {% if closed_price is not null and profit is not null %}
+        <div class="d-flex justify-content-between">
+            <p>Closed price:</p>
+            <span>@{{ closed_price }}</span>
+        </div>
+        <div class="d-flex justify-content-between">
+            <p>Profit:</p>
+            <span class="{{ profit < 0 ? 'r-col' : 'g-col' }}">{{ profit }} pips</span>
+        </div>
+        {% endif %}
+        <div class="mt-3 text-center {{ trade_action }} trades-actions">{{ trade_action | upper }}</div>
+    </div>
+</div>

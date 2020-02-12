@@ -42,8 +42,8 @@
 	<div class="row">
 
 		<!-- Trades section -->
-		<div class="trades col-12 col-xl-8">
-			<table class="table">
+		<div class="trades col-12 col-xl-8 d-none d-md-block">
+			<table class="trades-table table">
 				<thead>
 				<tr>
 					<th scope="col">#</th>
@@ -73,6 +73,24 @@
 				{% endfor %}
 				</tbody>
 			</table>
+		</div>
+
+		<div class="trades col-12 col-xl-8 d-block d-md-none">
+			{% for signal in signals%}
+				{{ include('elements/trades_box.html.twig', {
+					'image': signal.tradePairImage,
+					'trade_pair': signal.tradePair,
+					'trade_action': signal.tradeAction,
+					'price': signal.price,
+					'created': signal.created,
+					'take_profit': signal.takeProfit,
+					'stop_loss': signal.stopLoss,
+					'status': signal.status,
+					'closed': signal.closed,
+					'closed_price': signal.closedPrice,
+					'profit': signal.profit
+				}) }}
+			{% endfor %}
 		</div>
 	<!-- END of Trades section -->
 		<!-- Insights section -->
