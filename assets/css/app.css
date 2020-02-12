@@ -229,6 +229,8 @@ hr {
   display: block;
   position: relative;
   padding-top: 30px;
+  padding-bottom: 350px;
+  /*compensating for the footer's height*/
 }
 
 .show {
@@ -388,6 +390,77 @@ input[type=search]::-ms-reveal {
 }
 
 /* ** Footer ** */
+/* Trades */
+.trades .pagination {
+  justify-content: center;
+}
+.trades .pagination span.page-link {
+  height: 100%;
+}
+
+.trades .table {
+  background-color: #1F1F2F;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+.trades .table td, .trades .table th {
+  vertical-align: middle;
+  text-align: center;
+}
+.trades .table thead th {
+  border-top: unset;
+}
+.trades .table .closed-date {
+  color: #84858E;
+}
+
+.trades-img {
+  width: 50px;
+}
+
+.trades-pair {
+  font-weight: bold;
+}
+
+.trades-actions {
+  background-color: #1D2245;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px 40px;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1), 0 10px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.trades-box {
+  background-color: #1F1F2F;
+  border-radius: 0.5rem;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+/* Insights */
+.insights {
+  background-color: #1F1F2F;
+  color: #fff;
+  padding: 20px 10px 0;
+  border-radius: 0.5rem;
+}
+.insights h2 {
+  color: #01DB85;
+}
+.insights .insights-img-wrapper {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.insights .insights-img-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+.insights hr:last-child {
+  display: none;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -434,6 +507,20 @@ footer h5 {
 .copyright p {
   color: #01DB85;
   padding: 0;
+}
+
+/* ** Media queries ** */
+@media screen and (max-width: 992px) {
+  .main-content {
+    padding-bottom: 450px;
+    /*compensating for the footer's height*/
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding-bottom: 700px;
+    /*compensating for the footer's height*/
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

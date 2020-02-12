@@ -44,7 +44,7 @@
             {{ knp_pagination_render(pagination) }}
         </div>
 
-        <div class="trades col-12 d-block d-md-none">
+        <div class="trades col-12 d-block d-md-none mb-3">
             {% for signal in pagination %}
                 {{ include('elements/trades_box.html.twig', {
                     'image': signal.tradePairImage,
@@ -70,10 +70,8 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('signals') }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    {{ encore_entry_script_tags('signals') }}
 {% endblock %}
