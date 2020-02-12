@@ -1,1 +1,1 @@
-import '../css/contact.scss';
+import '../css/contact.css';

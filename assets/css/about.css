@@ -1,3 +1,9 @@
-
+.main-content {
+  padding-top: 0;
+  background-image: linear-gradient(to bottom, transparent, #191927), url("../images/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 /*# sourceMappingURL=about.css.map */

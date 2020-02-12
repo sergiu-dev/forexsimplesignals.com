@@ -13,7 +13,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand col-6 col-md-4 col-lg-2 pl-0" href="#">
+        <a class="navbar-brand col-6 col-md-4 col-lg-2 pl-0" href="{{ path('home') }}">
             <img src="{{ asset('build/images/logo.png') }}" alt="logo"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,6 +52,13 @@
 
     {% block trades_widget %}{% endblock %}
 
+    <!-- Success messages -->
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
     {% block body %}{% endblock %}
 
     <!-- Footer -->
@@ -66,16 +73,14 @@
                         non restibusaes maio es dem tumquam.
                     </p>
                     <div class="mt-auto pb-2">
-                        <a href="#">
-                            <span>More about us</span>
-                        </a>
+                        <a href="{{ path('about') }}">More about us</a>
                     </div>
                     <hr class="d-block d-md-none"/>
                 </div>
                 <div class="footer-contact d-flex flex-column col-12 col-md-6 col-lg-4 col-xl-3">
                     <h5 class="section-title">Get in touch</h5>
                     <a class="footer-contact-mail d-flex align-items-center pb-2" href="mailto:contact@forex.com?Subject=Hello" target="_top" title="Send us an email">
-                        <i class="icon-envelope mt-1"></i>
+                        <i class="icon-envelope mt-2 mr-0"></i>
                         <span>contact@forex.com</span>
                     </a>
                     <div class="social-icons mt-auto">
@@ -108,9 +113,13 @@
                 </div>
             </div>
         </section>
-        <div class="copyright row">
-            <p>Copyright &copy; {{ 'now'|date('Y') }} Forex Simple Signals. All rights reserved.</p>
-            <p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a><p>
+        <div class="copyright row flex-column flex-md-row justify-content-md-between">
+            <div>
+                <p>Copyright &copy; {{ 'now'|date('Y') }} Forex Simple Signals</p>
+            </div>
+            <div class="text-md-right">
+                <p>Flag icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a><p>
+            </div>
         </div>
     </footer>
     <!-- END of Footer -->

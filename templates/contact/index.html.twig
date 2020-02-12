@@ -4,7 +4,17 @@
 
     <!-- Main section container -->
     <main class="main-content">
-
+        <section class="container">
+            <h5 class="text-center pt-5">Get in touch</h5>
+            {{ form_start(messageForm, {method: 'POST'}) }}
+            {{ form_errors(messageForm) }}
+            {{ form_row(messageForm.name) }}
+            {{ form_row(messageForm.email) }}
+            {{ form_row(messageForm.subject) }}
+            {{ form_row(messageForm.message) | raw }}
+            <button type="submit" class="btn btn-primary">Send email</button>
+            {{ form_end(messageForm) }}
+        </section>
     </main>
 
 {% endblock %}

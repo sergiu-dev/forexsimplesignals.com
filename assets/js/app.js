@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import 'popper.js/dist/popper'
 import 'bootstrap/dist/js/bootstrap';
-import '../css/app.scss';
+import '../css/app.css';
 
 window.addEventListener('load', () => {
 
