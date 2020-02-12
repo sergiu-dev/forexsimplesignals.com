@@ -278,7 +278,7 @@ input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
 }
 
 .navbar-brand img {
-    width: 260px;
+    width: 100%;
     height: auto;
 }
 
@@ -314,9 +314,6 @@ input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
     }
     & thead th {
         border-top: unset;
-    }
-    & .closed-date {
-        color: $gray;
     }
 }
 

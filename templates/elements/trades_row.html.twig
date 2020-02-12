@@ -24,8 +24,8 @@
             <span class="closed-date">{{ closed|date('d.m.Y / h:i') }}</span>
         {% endif %}
         {% if closed_price is not null and profit is not null %}
-        <span class="font-weight-bold"> @{{ closed_price }}</span> <br/>
-        <span class="font-weight-bold {{ profit < 0 ? 'r-col' : 'g-col' }}"> Profit: {{ profit }} pips</span>
+        <span> @{{ closed_price }}</span> <br/>
+        <span {{ profit < 0 ? 'r-col' : 'g-col' }}"> Profit: {{ profit }} pips</span>
         {% endif %}
     </td>
 </tr>
