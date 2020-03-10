@@ -130,6 +130,20 @@ hr {
     background-image: linear-gradient(to right, rgba(105, 128, 159, 0), rgba(105, 128, 159, 0.75), rgba(105, 128, 159, 0));
 }
 
+.trades .page-item .page-link {
+    background-color: $mainBackgroundColor;
+    color: #fff;
+}
+
+.trades .page-item.active .page-link {
+    background-color: $btnGreen;
+    border: none;
+}
+
+.trades .page-item.disabled .page-link {
+    color: #6c757d;
+}
+
 .main-content {
     height: 100%;
     margin: 0 auto;
@@ -158,10 +172,10 @@ hr {
     background: #1d2126;
 }
 ::-webkit-scrollbar-thumb {
-    background: $green;
+    background: $btnGreen;
     border-radius: 20px;
     &:hover {
-        background: $green;
+        background: $btnGreen;
     }
 }
 // * END Scrollbar for Chrome
@@ -189,6 +203,12 @@ input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
     border-radius: 2px;
     background: $btnGreen;
     box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+    &:focus {
+        background-color: $btnGreen;
+        color: #fff;
+        transform: scale(1.1);
+        box-shadow: unset;
+    }
 }
 
 // ** Go to top button
@@ -382,6 +402,13 @@ footer {
     }
 }
 
+.footer-about-txt span {
+    font: {
+        style: italic;
+        size: 20px;
+    }
+}
+
 .footer-wrapper .section-title {
     margin: 0 0 20px;
 }
@@ -424,6 +451,11 @@ footer {
 
     .main-content {
         padding-bottom: 450px; /*compensating for the footer's height*/
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
 

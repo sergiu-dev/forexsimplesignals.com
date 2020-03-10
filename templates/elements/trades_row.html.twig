@@ -25,7 +25,7 @@
         {% endif %}
         {% if closed_price is not null and profit is not null %}
         <span> @{{ closed_price }}</span> <br/>
-        <span {{ profit < 0 ? 'r-col' : 'g-col' }}"> Profit: {{ profit }} pips</span>
+        <span class="{{ profit < 0 ? 'r-col' : 'g-col' }}"> Profit: {{ profit }} pips</span>
         {% endif %}
     </td>
 </tr>

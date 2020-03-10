@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <title>{% block title %}Forex Simple Signals | Free Forex Signals!{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -13,12 +14,12 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand col-6 col-md-4 col-lg-2 pl-lg-0 mr-0 order-1 order-lg-0" href="{{ path('home') }}">
-            <img src="{{ asset('build/images/logo.png') }}" alt="logo"/>
-        </a>
-        <button class="navbar-toggler order-0 order-lg-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand col-6 col-md-4 col-lg-2 pl-lg-0 mr-0" href="{{ path('home') }}">
+            <img src="{{ asset('build/images/logo.png') }}" alt="logo"/>
+        </a>
         <div class="collapse navbar-collapse col-lg-10 pr-0" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -66,11 +67,12 @@
         <section class="footer-wrapper container">
             <div class="row justify-content-between pb-3">
                 <div class="footer-about d-flex flex-column col-12 col-lg-4">
-                    <h5 class="section-title">A little bit about us</h5>
+                    <h5 class="section-title">A piece of advice</h5>
                     <p class="footer-about-txt">
-                        Magnis modipsae voloratati andigen daepeditem
-                        quiate re porem que aut labor. Laceaque eictemperum quiae sitiorem rest
-                        non restibusaes maio es dem tumquam.
+                        <span>
+                            Life is really simple, but we insist on making it complicated.<br>
+                        </span>
+                        - Confucius
                     </p>
                     <div class="mt-auto pb-2">
                         <a href="{{ path('about') }}">More about us</a>
@@ -102,14 +104,21 @@
                 <div class="footer-newsletter d-flex flex-column col-12 col-md-6 col-lg-4">
                     <h5 class="section-title">Free updates</h5>
                     <p>
-                        Daca doriti sa primiti notificari pentru noile .... si
-                        sa fiti la curent cu toate noutatile de pe site,
-                        please subscribe
+                        Please subscribe to receive updates or important announcements.
+                        We promise that we won't spam you.
                     </p>
-                    <form class="single-input mt-auto form-inline footer-text-content-box">
+                    <form class="single-input mt-auto form-inline footer-text-content-box" action="{{ path('subscribe') }}">
                         <input class="form-control col-12" type="email" placeholder="Email address" aria-label="subscribe">
                         <button class="btn btn-primary" type="submit">Subscribe</button>
                     </form>
+                    {{ form_start(subscribersForm, {method: 'POST'}) }}
+                    {{ form_errors(subscribersForm) }}
+                    <div class="row">
+                        <div class="col-sm-9">
+                            {{ form_row(subscribersForm.email, {attr: {placeholder: 'Enter email address'}}) }}
+                        </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                    {{ form_end(subscribersForm) }}
                 </div>
             </div>
         </section>
