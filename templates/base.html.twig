@@ -107,18 +107,10 @@
                         Please subscribe to receive updates or important announcements.
                         We promise that we won't spam you.
                     </p>
-                    <form class="single-input mt-auto form-inline footer-text-content-box" action="{{ path('subscribe') }}">
-                        <input class="form-control col-12" type="email" placeholder="Email address" aria-label="subscribe">
+                    <form class="single-input mt-auto form-inline footer-text-content-box" action="{{ path('subscribe') }}" method="POST">
+                        <input class="form-control col-12" type="email" name="email" placeholder="Email address" aria-label="subscribe">
                         <button class="btn btn-primary" type="submit">Subscribe</button>
                     </form>
-                    {{ form_start(subscribersForm, {method: 'POST'}) }}
-                    {{ form_errors(subscribersForm) }}
-                    <div class="row">
-                        <div class="col-sm-9">
-                            {{ form_row(subscribersForm.email, {attr: {placeholder: 'Enter email address'}}) }}
-                        </div>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                    {{ form_end(subscribersForm) }}
                 </div>
             </div>
         </section>
